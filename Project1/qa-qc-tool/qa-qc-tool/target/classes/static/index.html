@@ -3,16 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <title>QA-QC tool</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 </head>
 <body>
-<p><a href="/hello">Greet the world!</a></p>
-
-<form action="/hello" method="GET" id="nameForm">
-    <div>
-        <label for="nameField">How should the app call you?</label>
-        <input name="myName" id="nameField">
-        <button>Greet me!</button>
+<div class="content-wrapper">
+    <img src="./background.jpg">
+    <div class="mainHeading">
+        <h1>Import Schema Checker</h1>
     </div>
+</div>
+
+<form action="/uploadExcel" method="POST" enctype="multipart/form-data">
+    <div class="frame">
+        <div class="center">
+            <div class="title">
+                <h2>Drop file to upload</h2>
+            </div>
+
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" name="file" class="upload-input" />
+            </div>
+
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
+
+        </div>
+    </div>
+
 </form>
 </body>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+</style>
 </html>
