@@ -19,7 +19,6 @@ import java.util.*;
 @RestController
 public class QaQcToolApplication {
 	Projects p = new Projects();
-
 	private static final String UPLOADED_FOLDER = "/Users/pragunsharma/Desktop/NorthEastern Classes/Spring 2022/CS 5500/QAQC/CS5500NEU/Project1/qa-qc-tool/qa-qc-tool/Upload/";
 
 	public static void main(String[] args) {
