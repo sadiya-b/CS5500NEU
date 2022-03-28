@@ -5,32 +5,94 @@
     <title>QA-QC tool</title>
     <link rel="stylesheet" href="stylesheet.css" />
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <script type="text/javascript">
+        function showFileName() {
+            var fileName = document.getElementById("ProjectFileUploaded");
+            document.getElementById("ProjectFileName").textContent = fileName.files.item(0).name;
+        }
+    </script>
 </head>
 <body>
+<div class="logo">
+    <img src="./logo.jpeg" width="240px" height="35px">
+</div>
 <div class="content-wrapper">
-    <img src="./background.jpg">
+    <img src="./background.jpeg">
     <div class="mainHeading">
-        <h1>Import Schema Checker</h1>
+        <h1> QA/QC Tool </h1>
+        <h3>Import Schema Checker</h3>
     </div>
 </div>
 
 <form action="/uploadExcel" method="POST" enctype="multipart/form-data">
-    <div class="frame">
-        <div class="center">
+    <div class="box-container">
+        <div class="box">
             <div class="title">
-                <h2>Drop file to upload</h2>
+                <h2>Drop Projects file to upload</h2>
             </div>
-
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" name="file" id="ProjectFileUploaded" onchange="showFileName()" class="upload-input" />
+            </div>
+            <p class="fileName" id="ProjectFileName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Results file to upload</h2>
+            </div>
             <div class="dropzone">
                 <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
                 <input type="file" name="file" class="upload-input" />
             </div>
-
+            <p class="fileName"> File Name </p>
             <button type="submit" class="btn" name="uploadButton">Upload File</button>
-
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Impacts file to upload</h2>
+            </div>
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" name="file" class="upload-input" />
+            </div>
+            <p class="fileName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Tasks file to upload</h2>
+            </div>
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" name="file" class="upload-input" />
+            </div>
+            <p class="fileName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Donors file to upload</h2>
+            </div>
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" name="file" class="upload-input" />
+            </div>
+            <p class="fileName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Donor Contribution file to upload</h2>
+            </div>
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" name="file" class="upload-input" />
+            </div>
+            <p class="fileName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
         </div>
     </div>
-
 </form>
 </body>
 
@@ -38,6 +100,7 @@
     * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 </style>
 </html>
