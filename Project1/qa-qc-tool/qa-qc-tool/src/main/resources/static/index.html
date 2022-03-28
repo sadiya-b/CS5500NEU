@@ -5,32 +5,114 @@
     <title>QA-QC tool</title>
     <link rel="stylesheet" href="stylesheet.css" />
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <script type="text/javascript">
+        function showProjectFileName() {
+            var fileName = document.getElementById("ProjectFileUploaded");
+            document.getElementById("ProjectFileName").textContent = fileName.files.item(0).name;
+        }
+        function showResultsFileName() {
+            var fileName = document.getElementById("ResultsFileUploaded");
+            document.getElementById("ResultsFileName").textContent = fileName.files.item(0).name;
+        }
+        function showImpactsFileName() {
+            var fileName = document.getElementById("ImpactsFileUploaded");
+            document.getElementById("ImpactsFileName").textContent = fileName.files.item(0).name;
+        }
+        function showTasksFileName() {
+            var fileName = document.getElementById("TasksFileUploaded");
+            document.getElementById("TasksFileName").textContent = fileName.files.item(0).name;
+        }
+        function showDonorsFileName() {
+            var fileName = document.getElementById("DonorsFileUploaded");
+            document.getElementById("DonorsFileName").textContent = fileName.files.item(0).name;
+        }
+        function showDonorsContributionFileName() {
+            var fileName = document.getElementById("DonorsContributionFileUploaded");
+            document.getElementById("DonorsContributionName").textContent = fileName.files.item(0).name;
+        }
+    </script>
 </head>
 <body>
+<div class="logo">
+    <img src="./logo.jpeg" width="240px" height="35px">
+</div>
 <div class="content-wrapper">
-    <img src="./background.jpg">
+    <img src="./background.jpeg">
     <div class="mainHeading">
-        <h1>Import Schema Checker</h1>
+        <h1> QA/QC Tool </h1>
+        <h3>Import Schema Checker</h3>
     </div>
 </div>
 
 <form action="/uploadExcel" method="POST" enctype="multipart/form-data">
-    <div class="frame">
-        <div class="center">
+    <div class="box-container">
+        <div class="box">
             <div class="title">
-                <h2>Drop file to upload</h2>
+                <h2>Drop Projects file to upload</h2>
             </div>
-
             <div class="dropzone">
                 <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                <input type="file" name="file" class="upload-input" />
+                <input type="file" accept=".xls,.xlsx" name="file" id="ProjectFileUploaded" onchange="showProjectFileName()" class="upload-input" />
             </div>
-
+            <p class="fileName" id="ProjectFileName"> File Name </p>
             <button type="submit" class="btn" name="uploadButton">Upload File</button>
-
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Results file to upload</h2>
+            </div>
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" accept=".xls,.xlsx" name="file" id="ResultsFileUploaded" onchange="showResultsFileName()" class="upload-input" />
+            </div>
+            <p class="fileName" id="ResultsFileName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Impacts file to upload</h2>
+            </div>
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" accept=".xls,.xlsx" name="file" id="ImpactsFileUploaded" onchange="showImpactsFileName()" class="upload-input" />
+            </div>
+            <p class="fileName" id="ImpactsFileName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Tasks file to upload</h2>
+            </div>
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" accept=".xls,.xlsx" name="file" id="TasksFileUploaded" onchange="showTasksFileName()" class="upload-input" />
+            </div>
+            <p class="fileName" id="TasksFileName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Donors file to upload</h2>
+            </div>
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" name="file" accept=".xls,.xlsx" id="DonorsFileUploaded" onchange="showDonorsFileName()" class="upload-input" />
+            </div>
+            <p class="fileName" id="DonorsFileName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
+        </div>
+        <div class="box">
+            <div class="title">
+                <h2>Drop Donor Contribution file to upload</h2>
+            </div>
+            <div class="dropzone">
+                <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
+                <input type="file" name="file" accept=".xls,.xlsx" id="DonorsContributionFileUploaded" onchange="showDonorsContributionFileName()" class="upload-input" />
+            </div>
+            <p class="fileName" id="DonorsContributionName"> File Name </p>
+            <button type="submit" class="btn" name="uploadButton">Upload File</button>
         </div>
     </div>
-
 </form>
 </body>
 
@@ -38,6 +120,7 @@
     * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 </style>
 </html>
