@@ -29,89 +29,16 @@ public class Projects {
     //column 28 if 1 indexed.. this should be double, but we need to remove extra characters in the check
     private String budgetApproved;
 
-    private List<Integer> columnIndex = new ArrayList<>(List.of(1,2,3,4,5,6,7,8,19,20,21,22));
-
-    public List<Projects> readContent(String filePath) throws IOException {
-        List<Projects> content = new ArrayList<>();
-
-        FileInputStream inputStream = new FileInputStream(new File(filePath));
-
-        Workbook workbook = new XSSFWorkbook(inputStream);
-
-        Sheet sheet = workbook.getSheetAt(0);
-
-        Iterator<Row> iterator = sheet.iterator();
-
-        while(iterator.hasNext()){
-            //first row is column headers
-            Row nextRow = iterator.next();
-            int num = nextRow.getRowNum();
-            Iterator<Cell> cellIterator = nextRow.cellIterator();
-            Projects prj = new Projects();
-
-            if(num !=0) {
-                while (cellIterator.hasNext()) {
-                    Cell nextCell = cellIterator.next();
-                    int col = nextCell.getColumnIndex();
-
-                    switch (col) {
-                        case 0:
-                            prj.setNodeId(Integer.parseInt(nextCell.getStringCellValue()));
-                            break;
-                        case 1:
-                            prj.setOrgName(nextCell.getStringCellValue());
-                            break;
-                        case 2:
-                            prj.setTheme(nextCell.getStringCellValue());
-                            break;
-                        case 3:
-                            prj.setProgram(nextCell.getStringCellValue());
-                            break;
-                        case 4:
-                            prj.setProjectID(nextCell.getStringCellValue());
-                            break;
-                        case 5:
-                            prj.setProjectName(nextCell.getStringCellValue());
-                            break;
-                        case 6:
-                            prj.setReportingYear(Integer.parseInt(nextCell.getStringCellValue()));
-                            break;
-                        case 7:
-                            prj.setBenefeciariesToDate(Integer.parseInt(nextCell.getStringCellValue()));
-                            break;
-                        case 18:
-                            prj.setProjectPercentComplete(Integer.parseInt(nextCell.getStringCellValue()));
-                            break;
-                        case 19:
-                        case 20:
-                        case 21:
-                            prj.setProjectEndDate(nextCell.getStringCellValue());
-                            break;
-                        case 27:
-                            prj.setBudgetApproved(nextCell.getStringCellValue());
-                            break;
-                    }
-                }
-                content.add(prj);
-            }
-
-        }
-
-        inputStream.close();
-
-        return content;
-    }
-
     //region GETTERS - SETTERS
-    private void setBenefeciariesToDate(double value) {
+    public void setBenefeciariesToDate(double value) {
         this.beneficiariesToDate = value;
     }
 
-    private void setProjectID(String projectID) {
+    public void setProjectID(String projectID) {
         this.projectID = projectID;
     }
 
-    private void setReportingYear(int reportingYear) {
+    public void setReportingYear(int reportingYear) {
         this.reportingYear = reportingYear;
     }
 
