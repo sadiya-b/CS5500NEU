@@ -6,9 +6,29 @@
     <link rel="stylesheet" href="stylesheet.css" />
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <script type="text/javascript">
-        function showFileName() {
+        function showProjectFileName() {
             var fileName = document.getElementById("ProjectFileUploaded");
             document.getElementById("ProjectFileName").textContent = fileName.files.item(0).name;
+        }
+        function showResultsFileName() {
+            var fileName = document.getElementById("ResultsFileUploaded");
+            document.getElementById("ResultsFileName").textContent = fileName.files.item(0).name;
+        }
+        function showImpactsFileName() {
+            var fileName = document.getElementById("ImpactsFileUploaded");
+            document.getElementById("ImpactsFileName").textContent = fileName.files.item(0).name;
+        }
+        function showTasksFileName() {
+            var fileName = document.getElementById("TasksFileUploaded");
+            document.getElementById("TasksFileName").textContent = fileName.files.item(0).name;
+        }
+        function showDonorsFileName() {
+            var fileName = document.getElementById("DonorsFileUploaded");
+            document.getElementById("DonorsFileName").textContent = fileName.files.item(0).name;
+        }
+        function showDonorsContributionFileName() {
+            var fileName = document.getElementById("DonorsContributionFileUploaded");
+            document.getElementById("DonorsContributionName").textContent = fileName.files.item(0).name;
         }
     </script>
 </head>
@@ -32,7 +52,7 @@
             </div>
             <div class="dropzone">
                 <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                <input type="file" name="file" id="ProjectFileUploaded" onchange="showFileName()" class="upload-input" />
+                <input type="file" accept=".xls,.xlsx" name="file" id="ProjectFileUploaded" onchange="showProjectFileName()" class="upload-input" />
             </div>
             <p class="fileName" id="ProjectFileName"> File Name </p>
             <button type="submit" class="btn" name="uploadButton">Upload File</button>
@@ -43,9 +63,9 @@
             </div>
             <div class="dropzone">
                 <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                <input type="file" name="file" class="upload-input" />
+                <input type="file" accept=".xls,.xlsx" name="file" id="ResultsFileUploaded" onchange="showResultsFileName()" class="upload-input" />
             </div>
-            <p class="fileName"> File Name </p>
+            <p class="fileName" id="ResultsFileName"> File Name </p>
             <button type="submit" class="btn" name="uploadButton">Upload File</button>
         </div>
         <div class="box">
@@ -54,9 +74,9 @@
             </div>
             <div class="dropzone">
                 <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                <input type="file" name="file" class="upload-input" />
+                <input type="file" accept=".xls,.xlsx" name="file" id="ImpactsFileUploaded" onchange="showImpactsFileName()" class="upload-input" />
             </div>
-            <p class="fileName"> File Name </p>
+            <p class="fileName" id="ImpactsFileName"> File Name </p>
             <button type="submit" class="btn" name="uploadButton">Upload File</button>
         </div>
         <div class="box">
@@ -65,9 +85,9 @@
             </div>
             <div class="dropzone">
                 <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                <input type="file" name="file" class="upload-input" />
+                <input type="file" accept=".xls,.xlsx" name="file" id="TasksFileUploaded" onchange="showTasksFileName()" class="upload-input" />
             </div>
-            <p class="fileName"> File Name </p>
+            <p class="fileName" id="TasksFileName"> File Name </p>
             <button type="submit" class="btn" name="uploadButton">Upload File</button>
         </div>
         <div class="box">
@@ -76,9 +96,9 @@
             </div>
             <div class="dropzone">
                 <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                <input type="file" name="file" class="upload-input" />
+                <input type="file" name="file" accept=".xls,.xlsx" id="DonorsFileUploaded" onchange="showDonorsFileName()" class="upload-input" />
             </div>
-            <p class="fileName"> File Name </p>
+            <p class="fileName" id="DonorsFileName"> File Name </p>
             <button type="submit" class="btn" name="uploadButton">Upload File</button>
         </div>
         <div class="box">
@@ -87,9 +107,9 @@
             </div>
             <div class="dropzone">
                 <img src="http://100dayscss.com/codepen/upload.svg" class="upload-icon" />
-                <input type="file" name="file" class="upload-input" />
+                <input type="file" name="file" accept=".xls,.xlsx" id="DonorsContributionFileUploaded" onchange="showDonorsContributionFileName()" class="upload-input" />
             </div>
-            <p class="fileName"> File Name </p>
+            <p class="fileName" id="DonorsContributionName"> File Name </p>
             <button type="submit" class="btn" name="uploadButton">Upload File</button>
         </div>
     </div>
