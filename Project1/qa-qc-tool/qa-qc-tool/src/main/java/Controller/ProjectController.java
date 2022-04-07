@@ -77,28 +77,27 @@ public class ProjectController extends Projects {
 
                     if(columnIndex.contains(col)) {
                         String cellValue = (String)getCellValue(nextCell);
-
                         switch (col) {
                             case 0:
                                 if(cellValue.isEmpty() || cellValue.isBlank()){
-                                    String error = String.format("Error in row: %d | column: A | message: Please check if nodeId blank. <br>", rowNum);
+                                    String error = String.format("%d | A | Please check if nodeId blank. <br>", rowNum);
                                     errorResults.add(error);
                                 }
                                 else {
                                     if (!checkRegex("digit", nextCell.getStringCellValue())) {
-                                        String error = String.format("Error in row: %d | column: A | message: Please check if nodeId is all digit.<br>",rowNum);
+                                        String error = String.format("%d | A | Please check if nodeId is all digit.<br>",rowNum);
                                         errorResults.add(error);
                                     }
                                 }
                                 break;
                             case 1:
                                 if(cellValue.isEmpty() || cellValue.isBlank()) {
-                                    String error = String.format("Error in row: %d | column: B | message: Please check if Organization Name is blank.<br>", rowNum);
+                                    String error = String.format(" %d | B | Please check if Organization Name is blank.<br>", rowNum);
                                     errorResults.add(error);
                                 }
                                 else{
                                     if(cellValue.length()>100){
-                                        String error = String.format("Error in row: %d | column: B | message: Please check if Organization Name is less than 100 characters.<br>", rowNum);
+                                        String error = String.format("%d | B | Please check if Organization Name is less than 100 characters.<br>", rowNum);
                                         errorResults.add(error);
                                         //prj.setOrgName(nextCell.getStringCellValue());
                                     }
@@ -107,12 +106,12 @@ public class ProjectController extends Projects {
                                 break;
                             case 2:
                                 if(cellValue.isEmpty() || cellValue.isBlank()) {
-                                    String error = String.format("Error in row: %d | column: C | message: Please check if Theme is blank.<br>", rowNum);
+                                    String error = String.format("%d | C | Please check if Theme is blank.<br>", rowNum);
                                     errorResults.add(error);
                                 }
                                 else{
                                     if(cellValue.length()>32){
-                                        String error = String.format("Error in row: %d | column: C | message: Please check if theme is less than 32 characters.<br>", rowNum);
+                                        String error = String.format(" %d | C | Please check if theme is less than 32 characters.<br>", rowNum);
                                         errorResults.add(error);
                                        // prj.setTheme(nextCell.getStringCellValue());
                                     }
@@ -120,12 +119,12 @@ public class ProjectController extends Projects {
                                 break;
                             case 3:
                                 if(cellValue.isEmpty() || cellValue.isBlank()) {
-                                    String error = String.format("Error in row: %d | column: D | message: Please check if Program is blank.<br>", rowNum);
+                                    String error = String.format("%d | D | Please check if Program is blank.<br>", rowNum);
                                     errorResults.add(error);
                                 }
                                 else{
                                     if(cellValue.length()>45){
-                                        String error = String.format("Error in row: %d | column: D | message: Please check if program is less than 45 characters.<br>", rowNum);
+                                        String error = String.format(" %d | D | Please check if program is less than 45 characters.<br>", rowNum);
                                         errorResults.add(error);
                                       //  prj.setProgram(nextCell.getStringCellValue());
                                     }
@@ -134,12 +133,12 @@ public class ProjectController extends Projects {
                             case 4:
                                 //this field, if left blank is not and error, but a warning should be given nonetheless
                                 if(cellValue.isEmpty() || cellValue.isBlank()) {
-                                    String error = String.format("Warning - row: %d | column: E | message: The Project ID field is empty, please note that this will create a new project. If you are updating an existing project the Project ID is required.<br>", rowNum);
+                                    String error = String.format("%d | E | The Project ID field is empty, please note that this will create a new project. If you are updating an existing project the Project ID is required.<br>", rowNum);
                                     errorResults.add(error);
                                 }
                                 else{
                                     if(cellValue.length()>8){
-                                        String error = String.format("Error in row: %d | column: E | message: Please check if ProjectID is less than 8 characters.<br>", rowNum);
+                                        String error = String.format(" %d | E | Please check if ProjectID is less than 8 characters.<br>", rowNum);
                                         errorResults.add(error);
                                        // prj.setProjectID(nextCell.getStringCellValue());
                                     }
@@ -147,12 +146,12 @@ public class ProjectController extends Projects {
                                 break;
                             case 5:
                                 if(cellValue.isEmpty() || cellValue.isBlank()) {
-                                    String error = String.format("Error in row: %d | column: F | message: Please check if project name is blank.<br>", rowNum);
+                                    String error = String.format(" %d | F | Please check if project name is blank.<br>", rowNum);
                                     errorResults.add(error);
                                 }
                                 else{
                                     if(cellValue.length()>128){
-                                        String error = String.format("Error in row: %d | column: F | message: Please check if project name is less than 128 characters.<br>", rowNum);
+                                        String error = String.format(" %d | F | Please check if project name is less than 128 characters.<br>", rowNum);
                                         errorResults.add(error);
                                        // prj.setProjectName(nextCell.getStringCellValue());
                                     }
@@ -161,7 +160,7 @@ public class ProjectController extends Projects {
                             case 6:
                                 if(!cellValue.isEmpty() && !cellValue.isBlank()) {
                                     if(!checkRegex("digit",cellValue) || cellValue.length()>4){
-                                        String error = String.format("Error in row: %d | column: G | message: Year should be a 4 digit number.<br>", rowNum);
+                                        String error = String.format("%d | G | Year should be a 4 digit number.<br>", rowNum);
                                         errorResults.add(error);
                                         //prj.setReportingYear(Integer.parseInt(nextCell.getStringCellValue()));
                                     }
@@ -172,7 +171,7 @@ public class ProjectController extends Projects {
                                 if(!cellValue.isEmpty() && !cellValue.isBlank()) {
                                     cellValue = cellValue.replaceAll(",","");
                                     if(!checkRegex("digit",cellValue) || cellValue.length()>16){
-                                        String error = String.format("Error in row: %d | column: H | message: Please check beneficiaries to date.<br>", rowNum);
+                                        String error = String.format(" %d | H | Please check beneficiaries to date.<br>", rowNum);
                                         errorResults.add(error);
                                         //prj.setBenefeciariesToDate(Integer.parseInt(nextCell.getStringCellValue()));
                                     }
@@ -181,7 +180,7 @@ public class ProjectController extends Projects {
                             case 18:
                                 if(!cellValue.isEmpty() && !cellValue.isBlank()) {
                                     if(!checkRegex("digit",cellValue) && ((Integer.parseInt(cellValue)>=1 && Integer.parseInt(cellValue)<=100))){
-                                        String error = String.format("Error in row: %d | column: S | message: Value should be a number from 1-100<br>", rowNum);
+                                        String error = String.format(" %d | S | Value should be a number from 1-100<br>", rowNum);
                                         errorResults.add(error);
                                         //prj.setProjectPercentComplete(Integer.parseInt(nextCell.getStringCellValue()));
                                     }
@@ -190,7 +189,7 @@ public class ProjectController extends Projects {
                             case 19:
                                 if(!cellValue.isEmpty() && !cellValue.isBlank()) {
                                     if(!checkRegex("date",cellValue) || cellValue.length()>10){
-                                        String error = String.format("Error in row: %d | column: T | message: Incorrect date format.<br>", rowNum);
+                                        String error = String.format(" %d | T | Incorrect date format.<br>", rowNum);
                                         errorResults.add(error);
                                         //prj.setProjectEndDate(nextCell.getStringCellValue());
                                     }
@@ -199,7 +198,7 @@ public class ProjectController extends Projects {
                             case 20:
                                 if(!cellValue.isEmpty() && !cellValue.isBlank()) {
                                     if(!checkRegex("date",cellValue) || cellValue.length()>10){
-                                        String error = String.format("Error in row: %d | column: U | message: Incorrect date format.<br>", rowNum);
+                                        String error = String.format("%d | U | Incorrect date format.<br>", rowNum);
                                         errorResults.add(error);
                                         //prj.setProjectEndDate(nextCell.getStringCellValue());
                                     }
@@ -208,7 +207,7 @@ public class ProjectController extends Projects {
                             case 21:
                                 if(!cellValue.isEmpty() && !cellValue.isBlank()) {
                                     if(!checkRegex("date",cellValue) || cellValue.length()>10){
-                                        String error = String.format("Error in row: %d | column: V | message: Incorrect date format.<br>", rowNum);
+                                        String error = String.format("%d | V | Incorrect date format.<br>", rowNum);
                                         errorResults.add(error);
                                         //prj.setProjectEndDate(nextCell.getStringCellValue());
                                     }
@@ -219,7 +218,7 @@ public class ProjectController extends Projects {
                                     cellValue = cellValue.replaceAll(",","");
 
                                     if(!checkRegex("digit",cellValue) || cellValue.length()>19){
-                                        String error = String.format("Error in row: %d | column: AB | message: Check budget approved.<br>", rowNum);
+                                        String error = String.format("%d | AB | Check budget approved.<br>", rowNum);
                                         errorResults.add(error);
                                         //prj.setBudgetApproved(nextCell.getStringCellValue());
                                     }

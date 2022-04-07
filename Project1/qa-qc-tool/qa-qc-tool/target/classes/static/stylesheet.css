@@ -39,6 +39,15 @@
 	text-align: center;
 }
 
+.info {
+    height: 30px;
+    color: darkcyan;
+    font-size: 24px;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 h2 {
 	font-size: 16px;
 	font-weight: 300;
@@ -124,3 +133,57 @@ h2 {
     font-size: 3vw;
     font-family: "Open Sans", Helvetica, sans-serif;
 }
+
+.content-table {
+  border-collapse: collapse;
+  margin: 50px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  table-layout:fixed;
+}
+
+.content-table thead tr {
+  background-color: #3E6286;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table thead {
+    position: sticky;
+    top: 0;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid grey;
+  background-color: lavender;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #3E6286;
+}
+
+.tableContainer {
+    display: grid;
+    max-height: 600px;
+    overflow-x: auto;
+    overflow-y : scroll;
+
+}
+
